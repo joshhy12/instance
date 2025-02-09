@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help & FAQ - Books On Hand</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header (Same as index.html) -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="../index.html" class="logo-text">
+            <span class="logo-icon"><i class="fas fa-book"></i></span>
+            BOH
+          </a>
+        </div>
+        <div class="search-bar">
+          <select id="search-category">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="isbn">ISBN</option>
+          </select>
+          <input type="text" placeholder="Search for books..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-icons">
+          <a href="#" class="icon"><i class="fas fa-heart"></i></a>
+          <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#" class="icon"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="sell.html">Sell</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="registration.html">registration</a></li>
+          <li><a href="help.html" class="active">Help</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="registration-page">
+      <div class="registration-container">
+        <section class="registration-content">
+          <h2>Create Account</h2>
+          <form id="registrationForm" class="registration-form" action="./register.php" method="POST">
+            <!-- First Row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span class="error-message" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="regNumber">Registration Number</label>
+                <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
+                <span class="error-message" id="regError"></span>
+              </div>
+              <div class="form-group">
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" required>
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+              </div>
+              <div class="form-group">
+                <label for="region">Region</label>
+                <select id="region" name="region" required>
+                  <option value="">Select Region</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="district">District</label>
+                <select id="district" name="district" required>
+                  <option value="">Select District</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class="password-row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="passwordError"></span>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span class="error-message" id="confirmPasswordError"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About BOH</h3>
+          <p>Your trusted platform for buying and selling books online.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html">FAQ</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Books On Hand. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../main.js"></script>
+    <script src="../registration.js"></script>
+    <script src="../app.js"></script>
+  </body>
+</html>

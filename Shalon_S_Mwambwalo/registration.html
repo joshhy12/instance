@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+<body style="background-color: #d3d3d3;">
+  <header>
+    <div class="navbar-header">
+      <img src="images/logo.png" width="85px" height="80px" align="left" />
+      <h4 class="navbar-text navbar-right">Library System</h4>
+    </div>
+    <nav>
+            <ul>
+              
+                <li><a href="books.html">Books</a></li>
+                 <li><a href="login.html">Login</a></li>
+               <li><a href="login.html">Registration</a></li>
+                <li><a href="login.html">Settings</a></li>
+            </ul>
+        </nav>
+  </header>
+
+<main>
+<nav class="registration-container">
+<h1>Registration Form For Library system</h1>
+
+<form id="registrationForm">
+
+  <label for="fullName">Full Name:</label>
+  <input type="text" id="fullName" name="fullName" required>
+  <span class="error" id="fullNameError"></span><br><br>
+
+  <label for="regNumber">Registration Number:</label>
+  <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000"    required>
+  <span class="error" id="regNumberError"></span><br><br>
+
+  <label for="sex">Sex:</label>
+  <select id="sex" name="sex">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <span class="error" id="emailError"></span><br><br>
+
+  <label for="region">Region:</label>
+  <select id="region" name="region" required>
+    <option value="">Select Region</option>
+  </select><br><br>
+
+  <label for="district">District:</label>
+  <select id="district" name="district" required>
+    <option value="">Select District</option>
+  </select><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required>
+  <span class="error" id="passwordError"></span><br><br>
+
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required>
+  <span class="error" id="confirmPasswordError"></span><br><br>
+
+  <button type="submit" value="submit" style="width:auto;">Submit</button>
+
+  <!--<input type="submit" value="SUBMIT">-->
+</form>
+</nav>
+</main>
+
+
+<div id="featuredContent">
+  </div>
+
+
+
+<script>
+$(document).ready(function() {
+
+  // Form Validation
+  $("#registrationForm").submit(function(event) {
+    $(".error").text(""); // Clear previous errors
+    let isValid = true;
+
+    // Full Name Validation (Example - you can add more checks)
+    const fullName = $("#fullName").val();
+    if (fullName.trim() === "") {
+      $("#fullNameError").text("Full Name is required.");
+      isValid = false;
+    }
+
+    // Reg Number Validation
+    const regNumber = $("#regNumber").val();
+    const regEx = /^BCS-\d{2}-\d{4}-\d{4}$/;
+    if (!regEx.test(regNumber)) {
+        $("#regNumberError").text("Invalid Registration Number format.");
+        isValid = false;
+    }
+
+    // Email Validation
+    const email = $("#email").val();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+    if (!emailRegex.test(email)) {
+      $("#emailError").text("Invalid email format.");
+      isValid = false;
+    }
+
+    // Password Validation
+    const password = $("#password").val();
+    const confirmPassword = $("#confirmPassword").val();
+    if (password.length < 8 || !/[!@#$%^&*()_+\-=\[\]{};':",\\|,.<>\/?]/.test(password)) {  // Example criteria
+      $("#passwordError").text("Password must be at least 8 characters and contain a special character.");
+      isValid = false;
+    }
+    if (password !== confirmPassword) {
+      $("#confirmPasswordError").text("Passwords do not match.");
+      isValid = false;
+    }
+
+
+    if (!isValid) {
+      event.preventDefault(); // Prevent form submission if validation fails
+    }
+    return isValid; // Return true if validation passes, false otherwise
+  });
+
+
+  // jQuery Carousel (Example - you'll need to include a carousel library)
+  $("#featuredContent").html("<div>Carousel content here (replace with your carousel)</div>"); // Placeholder
+
+  // Smooth Scrolling (Example)
+  $('a[href^="#"]').on('click', function(event) {
+    event.preventDefault();
+    const target = $(this.getAttribute('href'));
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000); // Adjust animation speed as needed
+    }
+  });
+
+});
+</script>
+
+
+
+<script src="app.js"></script>
+<script src="registration.js"></script>
+
+
+<footer>
+        <p>&copy; 2025 Online Library System</p>
+    </footer>
+
+</body>
+</html>

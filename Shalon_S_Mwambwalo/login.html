@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<?php
+ 
+
+    ?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"/>
+    <title>Login Online Library</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3d3d3;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+        }
+        .login-container input[type="text"], .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+           <div class="navbar-header">
+            <img src="images/logo.png" width="85px" height="80px" align="left" />
+        </div>
+        </div>
+    </nav>
+
+  
+    <header>
+        <h2>Login to Online Library</h2>
+        <nav>
+            <ul>
+               
+                <li><a href="login.html">Login</a></li>
+                <li><a href="registration.html">Books</a></li>
+                   <li><a href="registration.html">Registration</a></li>
+
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter username" required>
+            <input type="password" id="password" placeholder="Enter password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Online Library. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+//Simple JavaScript for login form validation
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Simple validation for demo
+            if (username === "admin" && password === "shalon") {
+                alert("Login successful!");
+                window.location.href = "index.html"; // Redirect to homepage after successful login
+            } else {
+                alert("Invalid username or password!");
+            }
+        });
+        
+
+    </script>
+    <nav class="navbar navbar-default navbar-fixed-bottom"><div class="container-fluid">
+            <label class="navbar-text pull-right">Library system</label>
+        </div>
+        </div>
+    </nav>
+    
+
+<script src="js/jquery.js"></script> 
+<script src="js/bootstrap.js"></script> 
+<script src="js/login.js"></script> 
+<script src="js/sidebar.js"></script> 
+
+
+</body>
+</html>

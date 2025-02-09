@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQ - Books On Hand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">
+                    <span class="logo-icon"><i class="fas fa-book"></i></span>
+                    BOH
+                </a>
+            </div>
+            <div class="search-bar">
+                <select id="search-category">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="isbn">ISBN</option>
+                </select>
+                <input type="text" placeholder="Search for books...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <a href="#" class="icon"><i class="fas fa-heart"></i></a>
+                <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">registration</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="help-page">
+        <div class="help-container">
+            <section class="help-hero">
+                <h1>Help Center</h1>
+                <div class="help-search">
+                    <input type="text" placeholder="Search for help topics...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-category">
+                    <h3>Buying Books</h3>
+                    <div class="faq-item">
+                        <h4>How do I purchase a book?</h4>
+                        <p>Simply browse our collection, add items to your cart, and proceed to checkout. We accept various payment methods including credit cards and PayPal.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What is your return policy?</h4>
+                        <p>We offer a 30-day return policy for books in their original condition. Contact our support team to initiate a return.</p>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h3>Selling Books</h3>
+                    <div class="faq-item">
+                        <h4>How do I list a book for sale?</h4>
+                        <p>Go to the Sell page, fill out the book details form, upload photos, and set your price. Your listing will be reviewed and published within 24 hours.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What are the seller fees?</h4>
+                        <p>We charge a 10% commission on successful sales. There are no upfront listing fees.</p>
+                    </div>
+                </div>
+
+                <div class="faq-category">
+                    <h3>Account & Security</h3>
+                    <div class="faq-item">
+                        <h4>How do I create an account?</h4>
+                        <p>Click the user icon in the top right corner and select "Sign Up". Fill in your details to create your account.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How secure is my information?</h4>
+                        <p>We use industry-standard encryption to protect your personal and payment information. Your data is never shared with third parties.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-support">
+                <h2>Need More Help?</h2>
+                <p>Our support team is here to help you with any questions or concerns.</p>
+                <div class="support-options">
+                    <a href="#" class="support-option">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Support</h3>
+                        <p>support@booksonhand.com</p>
+                    </a>
+                    <a href="#" class="support-option">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone Support</h3>
+                        <p>1-800-BOOKS</p>
+                    </a>
+                    <a href="#" class="support-option">
+                        <i class="fas fa-comments"></i>
+                        <h3>Live Chat</h3>
+                        <p>Available 24/7</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About BOH</h3>
+                <p>Your trusted platform for buying and selling books online.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Books On Hand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

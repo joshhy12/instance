@@ -1,0 +1,126 @@
+[
+    {
+        "name": "Arusha",
+        "districts": ["Arusha City", "Arusha Rural", "Karatu", "Longido", "Meru", "Monduli", "Ngorongoro"]
+    },
+    {
+        "name": "Dar es Salaam",
+        "districts": ["Ilala", "Kinondoni", "Temeke", "Ubungo", "Kigamboni"]
+    },
+    {
+        "name": "Dodoma",
+        "districts": ["Bahi", "Chamwino", "Chemba", "Dodoma City", "Kondoa", "Kongwa", "Mpwapwa"]
+    },
+    {
+        "name": "Geita",
+        "districts": ["Bukombe", "Chato", "Geita", "Mbogwe", "Nyang'hwale"]
+    },
+    {
+        "name": "Iringa",
+        "districts": ["Iringa Municipal", "Iringa Rural", "Kilolo", "Mafinga", "Mufindi"]
+    },
+    {
+        "name": "Kagera",
+        "districts": ["Biharamulo", "Bukoba Rural", "Bukoba Urban", "Karagwe", "Kyerwa", "Missenyi", "Muleba", "Ngara"]
+    },
+    {
+        "name": "Katavi",
+        "districts": ["Mpanda Municipal", "Mlele", "Nsimbo"]
+    },
+    {
+        "name": "Kigoma",
+        "districts": ["Kigoma Municipal", "Kigoma Rural", "Kasulu", "Kasulu Urban", "Kibondo", "Buhigwe", "Uvinza"]
+    },
+    {
+        "name": "Kilimanjaro",
+        "districts": ["Hai", "Moshi City", "Moshi District", "Mwanga", "Rombo", "Same"]
+    },
+    {
+        "name": "Lindi",
+        "districts": ["Lindi Municipal", "Kilwa", "Lindi Rural", "Liwale", "Nachingwea", "Ruangwa"]
+    },
+    {
+        "name": "Manyara",
+        "districts": ["Babati", "Babati Town", "Hanang", "Kiteto", "Mbulu", "Simanjiro"]
+    },
+    {
+        "name": "Mara",
+        "districts": ["Bunda", "Butiama", "Musoma Municipal", "Musoma Rural", "Rorya", "Serengeti", "Tarime", "Tarime Urban"]
+    },
+    {
+        "name": "Mbeya",
+        "districts": ["Mbeya City", "Mbeya Rural", "Chunya", "Mbarali", "Kyela", "Rungwe", "Busokelo"]
+    },
+    {
+        "name": "Morogoro",
+        "districts": ["Morogoro Municipal", "Morogoro Rural", "Gairo", "Kilombero", "Kilosa", "Malinyi", "Mvomero", "Ulanga"]
+    },
+    {
+        "name": "Mtwara",
+        "districts": ["Mtwara Municipal", "Mtwara Rural", "Masasi", "Masasi Town", "Nanyumbu", "Newala", "Tandahimba"]
+    },
+    {
+        "name": "Mwanza",
+        "districts": ["Ilemela", "Nyamagana", "Misungwi", "Kwimba", "Magu", "Sengerema", "Ukerewe"]
+    },
+    {
+        "name": "Njombe",
+        "districts": ["Ludewa", "Makambako Town", "Makete", "Njombe Town", "Njombe Rural", "Wanging'ombe"]
+    },
+    {
+        "name": "Pemba North",
+        "districts": ["Micheweni", "Wete"]
+    },
+    {
+        "name": "Pemba South",
+        "districts": ["Chake Chake", "Mkoani"]
+    },
+    {
+        "name": "Pwani",
+        "districts": ["Bagamoyo", "Kibaha", "Kibaha Town", "Kisarawe", "Mafia", "Mkuranga", "Rufiji"]
+    },
+    {
+        "name": "Rukwa",
+        "districts": ["Kalambo", "Nkasi", "Sumbawanga Municipal", "Sumbawanga Rural"]
+    },
+    {
+        "name": "Ruvuma",
+        "districts": ["Madaba", "Mbinga", "Songea Municipal", "Songea Rural", "Tunduru", "Nyasa"]
+    },
+    {
+        "name": "Shinyanga",
+        "districts": ["Kahama", "Kahama Town", "Kishapu", "Shinyanga Municipal", "Shinyanga Rural"]
+    },
+    {
+        "name": "Simiyu",
+        "districts": ["Bariadi", "Busega", "Itilima", "Maswa", "Meatu"]
+    },
+    {
+        "name": "Singida",
+        "districts": ["Iramba", "Manyoni", "Singida Municipal", "Singida Rural", "Ikungi", "Mkalama"]
+    },
+    {
+        "name": "Songwe",
+        "districts": ["Ileje", "Mbozi", "Momba", "Songwe", "Tunduma"]
+    },
+    {
+        "name": "Tabora",
+        "districts": ["Igunga", "Kaliua", "Nzega", "Sikonge", "Tabora Municipal", "Urambo", "Uyui"]
+    },
+    {
+        "name": "Tanga",
+        "districts": ["Handeni", "Handeni Town", "Kilindi", "Korogwe", "Korogwe Town", "Lushoto", "Muheza", "Mkinga", "Pangani", "Tanga City"]
+    },
+    {
+        "name": "Unguja North",
+        "districts": ["North A", "North B"]
+    },
+    {
+        "name": "Unguja South",
+        "districts": ["Central District", "South District"]
+    },
+    {
+        "name": "Zanzibar West",
+        "districts": ["Magharibi", "Mjini"]
+    }
+]

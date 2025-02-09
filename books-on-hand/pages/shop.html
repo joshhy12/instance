@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Books On Hand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html" class="logo-text">
+                    <span class="logo-icon"><i class="fas fa-book"></i></span>
+                    BOH
+                </a>
+            </div>
+            <div class="search-bar">
+                <select id="search-category">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="isbn">ISBN</option>
+                </select>
+                <input type="text" placeholder="Search for books...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-icons">
+                <a href="#" class="icon"><i class="fas fa-heart"></i></a>
+                <a href="#" class="icon"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="icon"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="sell.html">Sell</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="registration.html">registration</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="shop-page">
+        <div class="shop-container">
+            <aside class="filters">
+                <h2>Filters</h2>
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><input type="checkbox" id="fiction"> <label for="fiction">Fiction</label></li>
+                        <li><input type="checkbox" id="non-fiction"> <label for="non-fiction">Non-Fiction</label></li>
+                        <li><input type="checkbox" id="academic"> <label for="academic">Academic</label></li>
+                        <li><input type="checkbox" id="children"> <label for="children">Children's</label></li>
+                    </ul>
+                </div>
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <input type="range" min="0" max="100" value="50" class="price-slider">
+                    <div class="price-range">Tsh 1000 - Tsh 10000</div>
+                </div>
+            </aside>
+            <div class="book-grid">
+                <!-- Books will be loaded dynamically via JavaScript -->
+
+                <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/1.jpeg" alt="Featured Book">
+                      <h3>The Silent Echo</h3>
+                      <p class="author">By John Smith</p>
+                      <p class="price">Tsh 2500</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>
+    
+                  <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/2.jpeg" alt="Featured Book">
+                      <h3>Midnight Dreams</h3>
+                      <p class="author">By Salma Kilindo</p>
+                      <p class="price">Tsh 2000</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>
+    
+                  <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/3.jpeg" alt="Featured Book">
+                      <h3>The Lost Garden</h3>
+                      <p class="author">By Salma Kilindo</p>
+                      <p class="price">Tsh 2000</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>
+    
+                  <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/4.jpeg" alt="Featured Book">
+                      <h3>Beyond the Stars</h3>
+                      <p class="author">By Salma Kilindo</p>
+                      <p class="price">Tsh 2000</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>
+
+                  <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/1.jpeg" alt="Featured Book">
+                      <h3>The Silent Echo</h3>
+                      <p class="author">By John Smith</p>
+                      <p class="price">Tsh 9500</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>
+    
+                  <div class="arrival-book">
+                    <div class="book-card">
+                      <img src="../images/2.jpeg" alt="Featured Book">
+                      <h3>Midnight Dreams</h3>
+                      <p class="author">By Salma Kilindo</p>
+                      <p class="price">Tsh 6000</p>
+                      <button class="btn">Add to Cart</button>
+                    </div>
+                  </div>    
+
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About BOH</h3>
+                <p>Your trusted platform for buying and selling books online.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Books On Hand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

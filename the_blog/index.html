@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #04a9f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .signup_form { background: rgba(255, 255, 255, 0.8); border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); width: 1000px; padding: 20px; }
+        .error-message { color: red; font-size: 12px; margin-top: 5px; display: none; }
+        .has-error { border-color: red !important; }
+        .form-sections { display: flex; gap: 20px; margin-top: 20px; }
+        .form-column { flex: 1; }
+        select, input { width: 100%; padding: 8px; border-radius: 15px; border: 2px solid black; margin-bottom: 10px; }
+        button { background: #04a9f5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+        .sec_1 p { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+        .field_intro p { font-weight: bold; margin-bottom: 10px; }
+        .success-message { color: green; font-size: 14px; margin-top: 10px; display: none; }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" class="registration-form">
+        <div class="signup_form">
+            <div class="sec_1">
+                <p>Signup</p>
+            </div>
+            
+            <div class="form-sections">
+                <div class="form-column">
+                    <div class="field_intro">
+                        <p>Basic Details</p>
+                    </div>
+                    <div class="details">
+                        <div class="label1">Full Name</div>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error-message"></div>
+
+                        <div class="label1">Registration Number</div>
+                        <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
+                        <div class="error-message"></div>
+
+                        <div class="label1">Gender</div>
+                        <select id="sex" name="sex" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <div class="field_intro">
+                        <p>Contact Details</p>
+                    </div>
+                    <div class="details">
+                        <div class="label1">Email</div>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message"></div>
+
+                        <div class="label1">Region</div>
+                        <select id="region" name="region" required></select>
+                        <div class="error-message"></div>
+
+                        <div class="label1">District</div>
+                        <select id="district" name="district" required></select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <div class="field_intro">
+                        <p>Login Details</p>
+                    </div>
+                    <div class="details">
+                        <div class="label1">Password</div>
+                        <input type="password" id="password" name="password" required>
+                        <div class="error-message"></div>
+
+                        <div class="label1">Confirm Password</div>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <button type="submit" class="submit-btn">Register</button>
+            </div>
+            <div class="success-message"></div>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            // Load regions from JSON
+            $.getJSON('regions.json', function(data) {
+                const regionSelect = $('#region');
+                regionSelect.html('<option value="">Select Region</option>');
+                data.forEach(region => {
+                    regionSelect.append(`<option value="${region.name}">${region.name}</option>`);
+                });
+            });
+
+            // Handle region change
+            $('#region').change(function() {
+                const selectedRegion = $(this).val();
+                $.getJSON('regions.json', function(data) {
+                    const region = data.find(r => r.name === selectedRegion);
+                    const districtSelect = $('#district');
+                    districtSelect.html('<option value="">Select District</option>');
+                    if (region) {
+                        region.districts.forEach(district => {
+                            districtSelect.append(`<option value="${district}">${district}</option>`);
+                        });
+                    }
+                });
+            });
+
+            $('#registrationForm').submit(function(e) {
+                e.preventDefault();
+
+                // Clear previous errors and success messages
+                $('.error-message').hide().text('');
+                $('.has-error').removeClass('has-error');
+                $('.success-message').hide().text('');
+
+                // Client-side validation
+                let isValid = true;
+
+                // Check if all inputs are filled
+                $('#registrationForm input, #registrationForm select').each(function() {
+                    if (!$(this).val()) {
+                        showError($(this), 'This field is required');
+                        isValid = false;
+                    }
+                });
+
+                // Validate Full Name
+                const fullName = $('#fullName').val();
+                if (fullName.length < 3) {
+                    showError($('#fullName'), 'Full Name must be at least 3 characters long');
+                    isValid = false;
+                }
+
+                // Validate Registration Number
+                const regNumber = $('#regNumber').val();
+                if (!/^[A-Za-z]{3}-\d{2}-\d{4}-\d{4}$/.test(regNumber)) {
+                    showError($('#regNumber'), 'Invalid registration number format (e.g., BCS-00-0000-0000)');
+                    isValid = false;
+                }
+
+                // Validate Email
+                const email = $('#email').val();
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showError($('#email'), 'Invalid email format');
+                    isValid = false;
+                }
+
+                // Validate Password Strength
+                const password = $('#password').val();
+                const passwordStrength = checkPasswordStrength(password);
+                if (passwordStrength === 'Weak') {
+                    showError($('#password'), 'Password is too weak. It should be at least 8 characters long and include a mix of letters, numbers, and special characters.');
+                    isValid = false;
+                } else if (passwordStrength === 'Medium') {
+                    showError($('#password'), 'Password is medium strength. Consider adding special characters or numbers to make it stronger.');
+                    isValid = false;
+                }
+
+                // Validate Confirm Password
+                if ($('#password').val() !== $('#confirmPassword').val()) {
+                    showError($('#confirmPassword'), 'Passwords do not match');
+                    isValid = false;
+                }
+
+                if (!isValid) return;
+
+                // If all validations pass, send data to the server
+                $.ajax({
+                    type: 'POST',
+                    url: 'register.php',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = 'success.html';
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        try {
+                            // Attempt to parse even if status is error
+                            const response = JSON.parse(xhr.responseText);
+                            alert('Error: ' + (response.message || 'Unknown error'));
+                        } catch (e) {
+                            // Show raw response if parsing fails
+                            console.error('Raw Server Response:', xhr.responseText);
+                            alert('Server returned invalid response. Check console.');
+                        }
+                    }
+                });
+            });
+
+            function showError(field, message) {
+                field.addClass('has-error');
+                field.next('.error-message').text(message).show();
+            }
+
+            function checkPasswordStrength(password) {
+                const strongRegex = /[!@#$%^&*(),.?":{}|<>]+/;
+                const mediumRegex = /[0-9]+/;
+
+                if (strongRegex.test(password)) {
+                    return 'Very Strong';
+                } else if (mediumRegex.test(password)) {
+                    return 'Strong';
+                } else if (password.length >= 8) {
+                    return 'Medium';
+                } else {
+                    return 'Weak';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

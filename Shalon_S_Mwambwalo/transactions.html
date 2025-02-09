@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Online Library System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background-color: #d3d3d3;">
+    <header>
+        <div class="navbar-header">
+			<img src="images/logo.png" width="85px" height="80px" align="left" />
+			<h4 class="navbar-text navbar-right">Library System</h4>
+		</div>
+        <h1>Transactions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Borrowing Books</h2>
+        <form>
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title" required>
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="student-id" required>
+            <button type="submit" style="width:auto;">Borrow</button>
+        </form>
+        <h2>Returning Books</h2>
+        <form>
+            <label for="return-book-title">Book Title:</label>
+            <input type="text" id="return-book-title" name="return-book-title" required>
+            <label for="return-student-id">Student ID:</label>
+            <input type="text" id="return-student-id" name="return-student-id" required>
+            <button type="submit"  style="width:auto;"  >Return</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Online Library System</p>
+    </footer>
+</body>
+</html>

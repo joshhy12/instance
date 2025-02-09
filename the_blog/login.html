@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: #04a9f5;
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .sec_1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sec_1 p {
+      font-size: 24px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group i {
+      position: absolute;
+      padding-top: 25%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 20px;
+    }
+
+    .input-group .label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #04a9f5;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 15px;
+      top: 0%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #888;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #04a9f5;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0398d9;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 20px;
+      }
+      
+      .sec_1 p {
+        font-size: 20px;
+      }
+      
+      input {
+        padding: 10px 15px 10px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+<form method="post" action="">
+ 
+    <div class="login_form">
+      <div class="sec_1">
+        <p>Login</p>
+      </div>
+      <div class="sec_2">
+        <!-- Username Field -->
+        <div class="input-group">
+          <i class='bx bxs-user'></i>
+          <div class="label">Username</div>
+          <input type="text" name="Fname" placeholder="Enter your username">
+        </div>
+
+        <!-- Password Field -->
+        <div class="input-group">
+          <div class="label">Password</div>
+          <input type="password" name="passcode" id="password" placeholder="Enter your password">
+          <i class='bx bx-hide password-toggle' id="togglePassword"></i>
+        </div>
+
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    // Password Toggle Functionality
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function() {
+      // Toggle password visibility
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      
+      // Toggle eye icon
+      this.classList.toggle('bx-show');
+      this.classList.toggle('bx-hide');
+    });
+
+   
+ // Update the input interactions to prevent errors
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('focus', function() {
+    const icon = this.parentElement.querySelector('i:not(.password-toggle)');
+    if(icon) icon.style.color = '#04a9f5';
+  });
+  
+  input.addEventListener('blur', function() {
+    const icon = this.parentElement.querySelector('i:not(.password-toggle)');
+    if(icon) icon.style.color = '#888';
+  });
+});
+ </script>
+</body>
+</html>
+
+
+
+
+
+
+

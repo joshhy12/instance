@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bloghomepage.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Techviewer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        }
+
+        .slider-container {
+            position: relative;
+            width: 50%;
+            max-width: 100%;
+            margin: 2% auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2%;
+            background: gray;
+            border-radius: 10px;
+            color: #333; /* Dark text color for visibility */
+            font-size: 1.2vw;
+            line-height: 1.4;
+            text-align: center;
+            font-weight: 600; /* Bold text for better visibility */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border for glass effect */
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2%;
+        }
+
+        .navigation button {
+            background: rgba(255, 255, 255, 0.7);
+            color: #333;
+            border: none;
+            padding: 1.5vw;
+            border-radius: 80%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navigation button:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /*h1 articles*/
+        .articles_contents h1 {
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        /*nav dropdown*/
+        .dropdown-content {
+            display: none;
+            position: relative;
+            margin-top: 2%;
+            left: 0%;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /*top nav bar*/
+        .topnav_bar {
+            height: 70%;
+            width: 50%;
+            border-radius: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10%;
+            gap: 12%;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .success-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1; /* Allow the success container to grow and take up remaining space */
+        }
+
+        .success-container h1 {
+            color: #4CAF50;
+        }
+
+        .success-container p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .success-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .success-container button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: gray;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        @media (max-width: 768px) {
+            .description {
+                font-size: 2vw;
+                padding: 3%;
+            }
+
+            .navigation button {
+                padding: 3vw;
+                font-size: 4vw;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .description {
+                font-size: 3vw;
+                padding: 4%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="the_top">
+        <div class="topnav_bar">
+            <button><a href="bloghomepage.html">Home</a></button>
+            <button onclick="toggleDropdown()" class="dropbtn">Dropdown</button>
+            <button><a href="add article.html">Add articles</a></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="login.html">login</a>
+                <a href="index.html">signup</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="the_maincontents">
+        <div class="name"><p>Techviewer</p></div>
+        <div class="success-container">
+            <h1>Registration Successful!</h1>
+            <p>Thank you for registering. Your account has been successfully created.</p>
+            <button onclick="window.location.href='index.html'">Proceed to Home Page</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Techviewer. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
