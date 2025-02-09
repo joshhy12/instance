@@ -1,0 +1,199 @@
+body{
+    background-color: silver;
+    margin: 0;
+    padding: 0;
+}
+.Header{
+    height: 100px;
+    width: 100%;
+    background-color: brown;
+    
+    padding: 3px;
+}
+
+.logo{
+    width: 20%;
+    height: 100px;
+    background-color: blueviolet;
+    float: left;
+}
+.heading{
+    width: 80%;
+    height: 100px;
+    background-color: brown;
+    float: right;
+    box-sizing: border-box;
+    text-align: center;
+}
+.navigation{
+    width: 100%;
+    height: 50px;
+    background-color: silver;
+    position: sticky;
+}
+nav{
+    background-color: white;
+}
+nav ul{
+    text-decoration: none;
+    text-align: center;
+    background-color: silver;
+}
+nav ul li{
+    margin: 10px;
+    display: inline-block;
+}
+nav ul li a{
+    text-decoration: none;
+    padding: 19px 25px;
+}
+nav ul li a:hover{
+    color: white;
+    background-color: brown;
+}
+.image{
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    object-fit: cover;
+}
+.conteiner1{
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    padding: 0px;
+    position: relative;
+}
+.haruna{
+    opacity: 0.3;
+    object-fit: cover;
+}
+.part1{
+    width: 30%;
+    height: 400px;
+    background-color: silver;
+    display: inline-block;
+    margin-left: 30px;
+
+}
+.picha1{
+    width: 309px;
+    height: 200px;
+    align-items: center;
+    display: flex;
+    margin-left: 30px;
+}
+.main-cont{
+    width: 100%;
+    height: 800px;
+    position: absolute;
+}
+.part1 h3{
+    text-align: center;
+}
+.part1 p{
+    text-align: center;
+    padding: 12px;
+    font-size: 19px;
+}
+.readmore{
+    margin-left: 140px;
+}
+.readmore a{
+    text-decoration: none;
+}
+.image-container {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .magnify {
+    width: 100%; 
+    transition: transform 0.3s ease-in-out; 
+    cursor: pointer;
+  }
+
+  /* Magnify effect when clicked or touched */
+  .image-container:active .magnify {
+    transform: scale(1.5); /* Increase the size to magnify */
+  }
+
+  /* Optional: Maintain the image within bounds */
+  .image-container {
+    width: 300px; /* Example width */
+    height: 200px; /* Example height */
+  }
+  .center{
+    position: absolute;
+    top: 60%;
+    left: 37%;
+    transform: translate(-40% -30%);
+font-size: 30px;
+color: blue;
+animation: moveText 10s linear infinite;
+  }
+  @keyframes moveText {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: brown;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: flex-start;
+    padding: 0px;
+  }
+
+  .address {
+    width: 30%;
+    background-color: brown;
+    padding: 10px;
+    color: white;
+  }
+
+  .address h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .address p {
+    text-align: center;
+  }
+  .list ul{
+    text-align: center;
+    text-decoration: none;
+    list-style-type:none
+  }
+  .list ul li{
+    text-decoration: none;
+  }
+  .list ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+  }
+  .list ul li a:hover{
+    color: black;
+  }
+  .last {
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+    text-align: center;
+    bottom: 0px;
+    margin-top: 0px;
+  }
+  .last p{
+    margin: 0px;
+    padding: 150px;
+  }
