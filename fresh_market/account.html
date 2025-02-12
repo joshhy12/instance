@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account - Fresh Market</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <div id="layout">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="customerservice.html">Customer Service</a></li>
+                    <li><a href="account.html" class="active">Account</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <header>
+                <h1>Your Account</h1>
+                <p>Manage your personal information and orders here.</p>
+            </header>
+
+            <main>
+                <section id="account-info">
+                    <h2>Personal Information</h2>
+                    <p>View or edit your personal details.</p>
+                    <form action="#" method="post">
+                        <label for="fullname">Full Name:</label>
+                        <input type="text" id="fullname" name="fullname" value=" " required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="zedcus@example.com" required>
+
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" value="" required>
+
+                        <button type="submit">Update Information</button>
+                    </form>
+                </section>
+
+                <section id="order-history">
+                    <h2>Order History</h2>
+                    <p>View your past orders and track their status.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#12345</td>
+                                <td>2025-01-20</td>
+                                <td>Delivered</td>
+                                <td>5000.00Tsh</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#12346</td>
+                                <td>2025-01-15</td>
+                                <td>Shipped</td>
+                                <td>3000.00Tsh</td>
+                                <td><button>View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="change-password">
+                    <h2>Change Password</h2>
+                    <form action="#" method="post">
+                        <label for="old-password">Old Password:</label>
+                        <input type="password" id="old-password" name="old-password" required>
+
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password" name="new-password" required>
+
+                        <label for="confirm-password">Confirm New Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+
+                        <button type="submit">Change Password</button>
+                    </form>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 Fresh Market. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
+

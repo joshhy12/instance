@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Fresh market</title>
+<link rel="stylesheet" href="index.css">
+<style>
+index.css
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+display: flex;
+height: 100vh;
+}
+#layout {
+display: flex;
+height: 100%;
+width: 100%;
+}
+#sidebar {
+background-color: #2c3e50;
+color: white;
+padding: 20px;
+width: 250px;
+height: 100%;
+}
+#sidebar nav ul {
+list-style: none;
+padding: 0;
+}
+#sidebar nav ul li {
+margin: 20px 0;
+}
+#sidebar nav ul li a {
+text-decoration: none;
+color: white;
+font-size: 18px;
+}
+#sidebar nav ul li a:hover {
+text-decoration: underline;
+}
+#main-content {
+flex: 1;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+width: calc(100% - 250px); /* Adjust to fill the remaining space */
+}
+header {
+text-align: center;
+padding: 10px;
+background-color: #f5f5f5;
+border-bottom: 2px solid #ddd;
+}
+#header-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+#logo img {
+width: 120px;
+}
+#user-account {
+display: flex;
+align-items: center;
+}
+#user-account img {
+width: 50px;
+height: 50px;
+margin-right: 10px;
+}
+#login-signup a {
+text-decoration: none;
+color: #007bff;
+margin: 0 5px;
+}
+#login-signup a:hover {
+text-decoration: underline;
+}
+header h1 {
+font-size: 36px;
+margin-bottom: 10px;
+color: #333;
+}
+header p {
+font-size: 18px;
+color: #666;
+}
+#search-section {
+text-align: center;
+padding: 15px 0;
+background-color: #f8f9fa;
+margin-bottom: 20px;
+}
+#search-form {
+display: inline-block;
+position: relative;
+width: 80%;
+max-width: 600px;
+}
+#search-bar {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px 0 0 5px;
+font-size: 16px;
+}
+#search-form button {
+padding: 10px 20px;
+border: 1px solid #ccc;
+border-left: none;
+background-color: #007bff;
+color: white;
+border-radius: 0 5px 5px 0;
+font-size: 16px;
+cursor: pointer;
+}
+#search-form button:hover {
+background-color: #0056b3;
+}
+#categories {
+margin-bottom: 30px;
+}
+#categories table {
+width: 100%;
+border-collapse: collapse;
+text-align: center;
+}
+#categories table td {
+border: 1px solid #ddd;
+padding: 20px;
+vertical-align: top;
+}
+.category img {
+width: 350px; /* Increased size */
+height: 350px; /* Increased size */
+object-fit: cover;
+margin-bottom: 10px;
+}
+.category p {
+margin: 10px 0 0;
+font-size: 16px;
+color: #444;
+}
+#promotions {
+margin-bottom: 30px;
+}
+#promotions h2 {
+color: #007bff;
+}
+#promotions p {
+font-size: 18px;
+color: #333;
+}
+#feedback {
+margin-bottom: 30px;
+font-style: italic;
+color: #555;
+}
+footer {
+background-color: #2c3e50;
+color: white;
+text-align: center;
+padding: 10px;
+position: relative;
+bottom: 0;
+width: 100%;
+}
+</style>
+</head>
+<body>
+<div id="layout">
+<aside id="sidebar">
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="about us.html">About Us</a></li>
+<li><a href="customerservice.html">Customer Service</a></li>
+<li><a href="account.html">Account</a></li>
+<li><a href="cart.html">Cart</a></li>
+</ul>
+</nav>
+</aside>
+<div id="main-content">
+<header>
+<div id="header-top">
+<div id="logo">
+<img src="logo.jpg" alt="Fresh Market Logo">
+</div>
+<div id="user-account">
+<img src="user.png" alt="User Icon" id="user-icon">
+<div id="login-signup">
+<a href="registration.html" id="registration-link">Login</a> |
+<a href="sign up.html" id="signup-link">Sign Up</a>
+</div>
+</div>
+</div>
+<h1>WELCOME TO FRESH MARKET</h1>
+<p>Your one-stop shop for all your food needs!</p>
+</header>
+<section id="search-section">
+<form action="#" id="search-form">
+<input type="text" placeholder="Search products..." id="search-bar">
+<button type="submit">Search</button>
+</form>
+</section>
+<main>
+<section id="categories">
+<h2>Product Categories</h2>
+<table border="">
+<tr>
+<td>
+<div class="category">
+<img src="fruits.jpg" alt="Fruits" class="category-img">
+<p>Fresh, hand-picked fruits for a healthy lifestyle.</p>
+</div>
+</td>
+<td>
+<div class="category">
+<img src="vegetable.jpg" alt="Vegetables" class="category-img">
+<p>Organic vegetables sourced from local farms.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="category">
+<img src="dairy.jpg" alt="Dairy" class="category-img">
+<p>High-quality dairy products for your daily nutrition.</p>
+</div>
+</td>
+<td>
+<div class="category">
+<img src="snacks.jpg" alt="Snacks" class="category-img">
+<p>Delicious snacks to satisfy your cravings at any time.</p>
+</div>
+</td>
+<tr>
+</table>
+</section>
+<section id="promotions">
+<h2>Promotions</h2>
+<p>Up to 50% off on select items! Don't miss out on our amazing deals!</p>
+</section>
+<section id="feedback">
+<h2>What Our Customers Say</h2>
+<blockquote>"Fresh products and fast delivery! The best food market experience!"</blockquote>
+<p>We take pride in delivering the freshest products directly to your doorstep.</p>
+</section>
+</main>
+<footer>
+<p>&copy; 2025 Fresh Market. All Rights Reserved.</p>
+</footer>
+</div>
+</div>
+</body>
+</html>
