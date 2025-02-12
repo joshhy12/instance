@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="text-align: center;">
+  <table border="1" style="border-collapse: collapse ; text-align: center; width: 50%; height: 50%; font-size: 30px;">
+    <td style="text-align: center;">
+        <form style="text-align: center;" action="register.php" method= "POST">
+            <label style="font-size: 20px;">Full Name</label><br>
+            <input type="text"name="full name"required><br>
+            <label>RegisterNumber</label><br>
+            <input type="text"name="registration_number"required><br>
+            <label>Sex:</label> <br> 
+            
+                <select name="sex" required> <br>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br>
+        
+                <label style="font-size: 20px;">Email:</label><br>
+                <input type="email" name="email" required> <br>
+        
+                <label style="font-size: 20px;">Region</label> <br>
+                <select name="region"required>
+                    <option value="">select region</option>
+                    <option value="">Arusha</option>
+                   <option value="">Kigoma</option>
+                    <option value="">Dodoma</option>
+                    <option value="">Mwanza</option>
+                    <option value="">Mbeya</option>
+                    <option value="">Tanga</option>
+                    <option value="">Tabora</option>
+                </select> <br>
+                <label  style="font-size: 20px;">District</label> <br>
+                <select name="district">
+                    <option value="">ArushaMC</option>
+                    <option value="">Njiro</option>
+                    <option value="">Rugwe</option>
+                    <option value="">Ileje</option>
+                    <option value="">Kyela</option>
+                    <option value="">Karatu</option>
+                    <option value="">Monduli</option>
+                    <option value="">MbeyaMC</option>
+                    <option value="">TangaMC</option>
+                    <option value="">MwanzaMC</option>
+                    <option value="">Uvinza</option>
+                </select> <br>
+        
+                <label  style="font-size: 20px;">Password:</label><br>
+                <input type="password" name="password" required><br>
+                <label for="confirmPassword">Confirm Password:</label> <br>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <br>
+        
+        
+                <button type="submit">Register</button>
+            </form>
+    </td>
+  </table>
+
+</body>
+</html>

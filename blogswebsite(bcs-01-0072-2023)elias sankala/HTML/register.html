@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="text-align: center;">
+
+        <form style="text-align: center;" action="register.php" method= "POST">
+            <label style="font-size: 20px;">Full Name</label><br>
+            <input type="text"name="full name"required><br>
+            <label>RegisterNumber</label><br>
+            <input type="text"name="registration_number"required><br>
+            <label  style="font-size: 20px;">Sex:</label> 
+            
+                <select name="sex" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+        
+                <label style="font-size: 20px;">Email:</label>
+                <input type="email" name="email" required> <br>
+        
+                <label style="font-size: 20px;">Region</label> 
+                <select name="region"required>
+                    <option value="">songea</option>
+
+                    <option value="">Rukwa</option>
+                    <option value="">Arusha</option>
+                   <option value="">morogoro</option>
+                    <option value="">Dodoma</option>
+                    <option value="">Mwanza</option>
+                    <option value="">Mbeya</option>
+                    <option value="">Tanga</option>
+                </select> 
+                <label  style="font-size: 20px;">District</label> 
+                <select name="district">
+                    <option value="">Mbinga</option>
+                    <option value="">sumbawanga</option>
+                    <option value="">njiro</option>
+                    <option value="">Ileje</option>
+                    <option value="">Kyela</option>
+                    <option value="">Karatu</option>
+                    <option value="">Monduli</option>
+                    <option value="">MbeyaMC</option>
+                    <option value="">TangaMC</option>
+                    <option value="">MwanzaMC</option>
+                    <option value="">Uvinza</option>
+                </select> <br>
+        
+                <label  style="font-size: 20px;">Password:</label><br>
+                <input type="password" name="password" required><br>
+                <label for="confirmPassword">Confirm Password:</label> <br>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <br>
+        
+        
+                <button type="submit">Register</button>
+            </form>
+ 
+
+</body>
+</html>
