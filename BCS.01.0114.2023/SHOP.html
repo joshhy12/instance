@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>shop</title>
+	<style type="text/css">	
+h3 {
+            width: 100; height: 100;
+        }
+		.f{
+color: yellow; background-color: black; text-align: center;
+	}
+	.m{
+	font-size: 100px;	
+	}
+.search-container{
+	display:flex;
+justify-content: center;
+margin: 20px;
+}
+.search-container input{
+padding: 10px;
+font-size: 16px;
+width: 250px;
+margin-right: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+}
+.search-container button{
+	padding: 10px 20px;
+	background-color: #ff4500;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.search-container button:hover{
+	background-color: #e03e00;
+}
+nav:hover{
+background-color: yellow;
+}
+a{
+	background-color: yellowgreen; float: left;
+}
+</style>
+
+</head>
+<body>
+	<nav>
+    <a href="index.html">Home</a>
+    <a href="SHOP.html">Shop</a>
+    <a href="about us.html">About Us</a>
+    <a href="login.html">login</a>
+</nav>
+<h1 class="f m">SHOP</h1>
+<div class="search-container">
+	<input type="text" id="searchinput" placeholder="search for jerseys..."onkeyup="searchjerseys()">
+	<button type="submit">search</button>
+</div>
+<script>
+	function searchjerseys(){
+		const input=document.getElementById('searchinput');
+		const filter=input.value.tolowercase();
+		const jerseys=document.getElementsByTagName('jersey-card');
+		
+	for (let i = 0; i < jerseyslength; i++) {
+			const jerseyName=jerseys[i].getElementsByTagName("h3")[0];
+			if (jerseyName) {
+				const textvalue=jerseyName.textcontent || jerseyname.innertext;
+				if (textvalue.tolowercase().indexof(filter)>-1) {
+					jerseys[i].style.display='';
+				} else{
+					jerseys[i].style.display='none';
+				}
+			}
+		}	
+	}
+</script>
+<div class="showcase">
+    <div class="jersey-card">
+        <img src="team 1 jersey.jpeg" width="200" height="200" alt="manchester jersey">
+        <h3>Manchester United </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('Team 1 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team 2 jersey.jpg" width="200" height="200" alt="Arsenal">
+        <h3>Arsenal</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 2 Jersey')">Add to Cart</button>
+    </div>
+    <div id="y" class="jersey-card">
+        <img src="team 3 jersey.jpg" width="200" height="200" alt="Real Madrid">
+        <h3>Real Madrid</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 3 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team 4 jersey.jpg" width="200" height="200" alt="bayern munchen">
+        <h3>bayern munchen</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 4 Jersey')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="BARCELONA(1).jpg" width="200" height="200" alt="BARCELONA jersey">
+        <h3>BARCELONA </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('BARCELONA(1)')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="RSC.jpg" width="200" height="200" alt="RSC jersey">
+        <h3>RSC </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('RSC')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="PSG.jpg" width="200" height="200" alt="PSG jersey">
+        <h3>PSG </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('PSG')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="TABORA UTD.jpg" width="200" height="200" alt="TABORA UTD jersey">
+        <h3>TABORA UTD </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('TABORA UTD')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="YSC.jpg" width="200" height="200" alt="YSC jersey">
+        <h3>YSC </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('YSC')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="NAPOLI.jpg" width="200" height="200" alt="NAPOLI jersey">
+        <h3>NAPOLI </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('NAPOLI')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="JUVENTUS.jpg" width="200" height="200" alt="JUVENTUS jersey">
+        <h3>JUVENTUS </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('JUVENTUS')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="DORTMUND.jpg" width="200" height="200" alt="DORTMUND jersey">
+        <h3>DORTMUND </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('DORTMUND')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="AL NASSR.jpg" width="200" height="200" alt="AL NASSR jersey">
+        <h3>AL NASSR </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('AL NASSR')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="PALMEIRAS.jpg" width="200" height="200" alt="PALMEIRAS jersey">
+        <h3>PALMEIRAS </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('PALMEIRAS')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="BARCELONA.jpg" width="200" height="200" alt="BARCELONA jersey">
+        <h3>BARCELONA </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('BARCELONA')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="INTER.jpg" width="200" height="200" alt="INTER jersey">
+        <h3>INTER </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('INTER')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="MIAMI.jpg" width="200" height="200" alt="MIAMI jersey">
+        <h3>MIAMI </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('MIAMI')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="COAST.jpg" width="200" height="200" alt="COAST jersey">
+        <h3>COAST </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('COAST')">Add to Cart</button>
+    </div>
+     <div class="jersey-card">
+        <img src="SSC.jpg" width="200" height="200" alt="SSC jersey">
+        <h3>SSC </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('SSC')">Add to Cart</button>
+    </div>
+</div>
+</body>
+</html>

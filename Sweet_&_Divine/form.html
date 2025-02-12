@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration Form</title>
+<!-- Optional CSS Styling -->
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 0px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    select, input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"><!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/style.css"><!-- Custom CSS -->
+</head>
+<header>
+  <h1>USER REGISTRATION FORM</h1>
+</header>  
+<body>
+<form id="registrationForm" action="index.html" method="POST">
+  <label>Full Name:</label>
+<input type="text" id="fullName" required><br>
+
+<label>Registration Number:</label>
+<input type="text" id="regNumber" placeholder="BCS-00-0000-0000" required><br>
+
+<label>Sex:</label>
+<select id="gender" required>
+<option value="" disabled selected>Select Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select><br>
+
+<label>Email:</label>
+<input type="email" id="email" required><br>
+
+<label for="region">Region:</label>
+<select id="region" required>
+<option value="">Select Region</option>
+<!-- Regions will be added here dynamically -->
+</select>
+
+<label for="district">District:</label>
+<select id="district" required>
+<option value="">Select District</option>
+<!-- Districts will be added here dynamically -->
+</select>
+
+<label>Password:</label>
+<input type="password" id="password" required><br>
+
+<label>Confirm Password:</label>
+<input type="password" id="confirmPassword" required><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+<!-- Include local jQuery -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    // Confirm that our script is running
+    console.log("Script is running!");
+
+    $(document).ready(function() {
+      // Define regions with their corresponding districts
+      const regions = {
+"Tanzania": {
+"Dodoma": ["Bahi", "Chamwino", "Dodoma Urban"],
+"Arusha": ["Arusha City", "Arumeru", "Karatu"]
+        },
+"Kenya": {
+"Nairobi": ["Westlands", "Kasarani", "Embakasi"],
+"Mombasa": ["Nyali", "Likoni", "Changamwe"]
+        }
+      };
+
+      // Cache references to the dropdown elements
+      const regionDropdown = $("#region");
+      const districtDropdown = $("#district");
+
+      // Populate the region dropdown dynamically by looping through each country and its regions
+      $.each(regions, function(country, regionData) {
+        $.each(regionData, function(region, districtArray) {
+          regionDropdown.append(`<option value="${region}">${region}</option>`);
+        });
+      });
+
+      // When a region is selected, update the district dropdown accordingly
+      regionDropdown.change(function() {
+        const selectedRegion = $(this).val();
+        // Clear previous district options
+        districtDropdown.empty();
+        districtDropdown.append('<option value="">Select District</option>');
+
+        // Loop through each country to find the selected region and add its districts
+        $.each(regions, function(country, regionData) {
+          if (regionData[selectedRegion]) {
+            regionData[selectedRegion].forEach(function(district) {
+              districtDropdown.append(`<option value="${district}">${district}</option>`);
+            });
+          }
+        });
+      });
+    });
+</script>
+</body>
+</html>
+

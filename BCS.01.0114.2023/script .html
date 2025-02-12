@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jersey World - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Jersey World</h1>
+    <p>Your One-Stop Shop for Official Team Jerseys</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="showcase">
+    <div class="jersey-card">
+        <img src="team1-jersey.jpg" alt="Team 1 Jersey">
+        <h3>Team 1 Jersey</h3>
+        <p>Price: $50</p>
+        <button onclick="addToCart('Team 1 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team2-jersey.jpg" alt="Team 2 Jersey">
+        <h3>Team 2 Jersey</h3>
+        <p>Price: $55</p>
+        <button onclick="addToCart('Team 2 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team3-jersey.jpg" alt="Team 3 Jersey">
+        <h3>Team 3 Jersey</h3>
+        <p>Price: $60</p>
+        <button onclick="addToCart('Team 3 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team4-jersey.jpg" alt="Team 4 Jersey">
+        <h3>Team 4 Jersey</h3>
+        <p>Price: $45</p>
+        <button onclick="addToCart('Team 4 Jersey')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Jersey World. All rights reserved.</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+<ALOASK-SEPARATE-EDITORS>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ff4500;
+}
+
+.showcase {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.jersey-card {
+    background-color: white;
+    width: 200px;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.jersey-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.jersey-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.jersey-card p {
+    color: #555;
+}
+
+.jersey-card button {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.jersey-card button:hover {
+    background-color: #e03e00;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+<ALOASK-SEPARATE-EDITORS>function addToCart(jerseyName) {
+    alert(jerseyName + " has been added to your cart!");
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jersey World - Portfolio</title>
+    <style type="text/css">
+        h3 {
+            width: 100; height: 100;
+        }
+        .carousel {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    animation: slide 8s infinite;
+}
+
+.slides img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #ff4500;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    width: 150px;
+    top: 40px;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+    color: white;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ff4500;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel">
+    <div class="slides">
+        <img src="team 1 jersey.jpeg" width="200" height="200" alt="manchester jersey">
+        <img src="team 2 jersey.jpg" width="200" height="200" alt="Arsenal">
+        <img src="team 3 jersey.jpg" width="200" height="200" alt="Real Madrid">
+       <img src="team 4 jersey.jpg" width="200" height="200" alt="bayern munchen">
+
+    </div>
+</div>
+
+
+<header>
+    <h1>Jersey World</h1>
+    <p>Your One-Stop Shop for Official Team Jerseys</p>
+</header>
+
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="SHOP.html">Shop</a></li>
+        
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="Remi Login.html">Remi Login</a></li>
+    </ul>
+</nav>
+
+<div class="search-container">
+    <input type="text" id="searchinput" placeholder="search for jerseys..."onkeyup="searchjerseys()">
+    <button type="submit">search</button>
+</div>
+
+<div class="showcase">
+    <div class="jersey-card">
+        <img src="team 1 jersey.jpeg" width="200" height="200" alt="manchester jersey">
+        <h3>Manchester United </h3>
+        <p>Price: TZS.25 000/=</p>
+        <button onclick="addToCart('Team 1 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team 2 jersey.jpg" width="200" height="200" alt="Arsenal">
+        <h3>Arsenal</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 2 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team 3 jersey.jpg" width="200" height="200" alt="Real Madrid">
+        <h3>Real Madrid</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 3 Jersey')">Add to Cart</button>
+    </div>
+    <div class="jersey-card">
+        <img src="team 4 jersey.jpg" width="200" height="200" alt="bayern munchen">
+        <h3>bayern munchen</h3>
+        <p>Price:  TZS.25 000/=</p>
+        <button onclick="addToCart('Team 4 Jersey')">Add to Cart</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Jersey World. All rights reserved.</p>
+</footer>
+<script type="text/javascript">
+    $(document).ready(function () {
+    // Smooth Scrolling
+    $("nav a").on("click", function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            let hash = this.hash;
+            $("html, body").animate(
+                {
+                    scrollTop: $(hash).offset().top,
+                },
+                800
+            );
+        }
+    });
+
+    // Dropdown Animation
+    $(".dropdown").hover(
+        function () {
+            $(this).find(".dropdown-menu").stop(true, true).slideDown(300);
+        },
+        function () {
+            $(this).find(".dropdown-menu").stop(true, true).slideUp(300);
+        }
+    );
+});
+
+</script>
+<script src="scripts.js"></script>
+</body>
+</html>

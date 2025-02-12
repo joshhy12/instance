@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: light blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.signup-container {
+    background-color: yellow;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+    height: 60%;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 70%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: black;
+    color: yellow;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+</style>
+</head>
+<body>
+<pre>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="regNumber">Registration Number:</label>
+            <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="region">Region:</label>
+            <select id="region" name="region">
+                <option value="">Select Region</option>
+            </select>
+
+            <label for="district">District:</label>
+            <select id="district" name="district">
+                <option value="">Select District</option>
+            </select>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+<p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("signupForm");
+
+    // Load regions and districts using Ajax
+    const regionSelect = document.getElementById("region");
+    const districtSelect = document.getElementById("district");
+
+    fetch("regions.json")
+        .then(response => response.json())
+        .then(data => {
+            data.regions.forEach(region => {
+                const option = document.createElement("option");
+                option.value = region.name;
+                option.textContent = region.name;
+                regionSelect.appendChild(option);
+            });
+
+            regionSelect.addEventListener("change", function () {
+                const selectedRegion = this.value;
+                districtSelect.innerHTML = '<option value="">Select District</option>';
+
+                const regionData = data.regions.find(r => r.name === selectedRegion);
+                if (regionData) {
+                    regionData.districts.forEach(district => {
+                        const option = document.createElement("option");
+                        option.value = district;
+                        option.textContent = district;
+                        districtSelect.appendChild(option);
+                    });
+                }
+            });
+        });
+
+    // Form validation
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = document.getElementById("fullName").value;
+        const regNumber = document.getElementById("regNumber").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        // Full name validation
+        if (!/^[A-Za-z\s]+$/.test(fullName)) {
+            alert("Full name should only contain letters and spaces.");
+            return;
+        }
+
+        // Registration number validation
+        const regNumberPattern = /^BCS-\d{2}-\d{4}-\d{4}$/;
+        if (!regNumberPattern.test(regNumber)) {
+            alert("Invalid registration number format! Use BCS-00-0000-0000.");
+            return;
+        }
+
+        // Email validation
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            alert("Invalid email format.");
+            return;
+        }
+
+        // Password validation
+        const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordPattern.test(password)) {
+            alert("Password must be at least 8 characters, contain a number and a special character.");
+            return;
+        }
+
+        // Confirm password validation
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        alert("Registration successful!");
+        form.reset();
+    });
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Inline JSON data
+    const regionsData = {
+        "regions": [
+            {
+                "name": "Mbeya",
+                "districts": ["Tukuyu", "Kyela", "Mbalali"]
+            },
+            {
+                "name": "Mara",
+                "districts": ["Mara dc", "Mara cc"]
+            },
+            {
+                "name": "Arusha",
+                "districts": ["Arusha dc", "Karatu", "Meru" ]
+            }
+        ]
+    };
+
+    const regionSelect = document.getElementById("region");
+    const districtSelect = document.getElementById("district");
+
+    // Populate region dropdown from the inline data
+    regionsData.regions.forEach(region => {
+        const option = document.createElement("option");
+        option.value = region.name;
+        option.textContent = region.name;
+        regionSelect.appendChild(option);
+    });
+
+    // Update districts dropdown when a region is selected
+    regionSelect.addEventListener("change", function () {
+        const selectedRegion = this.value;
+        districtSelect.innerHTML = '<option value="">Select District</option>';
+        const regionInfo = regionsData.regions.find(r => r.name === selectedRegion);
+        if (regionInfo) {
+            regionInfo.districts.forEach(district => {
+                const option = document.createElement("option");
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            });
+        }
+    });
+
+    // Example: Additional form validation code goes here...
+});
+
+</script>
+</pre>
+</body>
+</html>
