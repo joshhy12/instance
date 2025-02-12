@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">About Me</a></li>
+      <li><a href="faq.html">Blog</a></li>
+      <li><a href="about.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Registration Form -->
+  <h2>User Registration</h2>
+  <form id="registrationForm">
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required><br>
+    <label for="regnumber">Registration Number:</label>
+    <input type="text" id="regnumber" name="regnumber" required><br>
+    <label for="gender">Sex:</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="region">Region:</label>
+    <select id="region" name="region" required>
+      <option value="">Select Region</option>
+      <option value="Region1">Region1</option>
+      <option value="Region2">Region2</option>
+      <!-- Add more regions as needed -->
+    </select><br>
+    <label for="district">District:</label>
+    <select id="district" name="district" required>
+      <option value="">Select District</option>
+      <!-- Options will be dynamically loaded using AJAX -->
+    </select><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+    <input type="submit" value="Register">
+  </form>
+  
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

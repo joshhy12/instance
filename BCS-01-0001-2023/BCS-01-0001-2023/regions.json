@@ -1,0 +1,16 @@
+{
+    "regions": [
+        {
+            "name": "Arusha",
+            "districts": ["Arusha City", "Meru", "Monduli", "Ngorongoro", "Karatu"]
+        },
+        {
+            "name": "Dar es salaam",
+            "districts": ["Ilala", "Kinondoni", "Temeke", "Ubungo", "Kigamboni"]
+        },
+        {
+            "name": "Mwanza",
+            "districts": ["Nyamagana", "Ilemela", "Sengerema", "Ukerewe"]
+        }
+    ]
+}

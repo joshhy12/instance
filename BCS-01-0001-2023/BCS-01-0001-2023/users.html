@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registered Users</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h2>Registered Users</h2>
+        <nav>
+            <ul>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=aboutme.html>About Me</a></li>
+                <li><a href=projects.html>Projects</a></li>
+                <li><a href=blog.html>Blog</a></li>
+                <li><a href=contact.html>contact</a></li>
+                <li><a href=registration.html>Registration</a></li>
+                <li><a href=users.html>Registered Users</a></li>
+            </ul>
+        </nav>
+        <table border="1">
+            <tr>
+                <th>Full Name</th>
+                <th>Registration Number</th>
+                <th>Sex</th>
+                <th>Email</th>
+                <th>Region</th>
+                <th>District</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{  user.full_name  }}</td>
+                <td>{{  user.reg_number  }}</td>
+                <td>{{  user.sex  }}</td>
+                <td>{{  user.email  }}</td>
+                <td>{{  user.region  }}</td>
+                <td>{{  user.district  }}</td>
+            </tr>
+            {% end for %}
+        </table>
+    </body>
+</html>
