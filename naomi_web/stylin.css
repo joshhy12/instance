@@ -1,0 +1,29 @@
+body {
+font-family:Arial, sans-serif;
+background-color:darkslategrey;
+display: black;
+justify-content: center;
+align-items: center;
+height: 100vh;
+
+}
+.container{
+    background-color: white;
+    padding: 20px;
+    border-radius:5px;
+    box-shadow: 0 0 10px;
+    width: 100px;
+
+}
+.error{
+    color:red;
+    font-size:10px;
+
+}
+button{
+background-color:blue;
+color:white;
+padding:10px;
+border:none;
+width:100%;
+}
